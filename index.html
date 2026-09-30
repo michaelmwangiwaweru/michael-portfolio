@@ -1,0 +1,4193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Michael Mwangi Waweru - Java Developer, PHP Developer, Python Data Analyst and Full-Stack Developer">
+
+    <meta name="author" content="Michael Mwangi Waweru">
+
+    <title>Michael Mwangi Waweru | Developer Portfolio</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Saira+Extra+Condensed:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         CUSTOM CSS
+    ====================================================== -->
+
+    <style>
+
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6610f2;
+            --accent: #00c6ff;
+
+            --dark: #111827;
+            --dark-soft: #1f2937;
+
+            --light: #f8fafc;
+            --text: #374151;
+            --muted: #6b7280;
+
+            --white: #ffffff;
+            --border: #e5e7eb;
+
+            --sidebar-width: 270px;
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ====================================================== */
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family: "Open Sans", sans-serif;
+
+            color: var(--text);
+
+            background: #ffffff;
+
+            font-size: 15px;
+
+            line-height: 1.75;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        #sideNav {
+
+            width: var(--sidebar-width);
+
+            min-height: 100vh;
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            z-index: 9999;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #0f172a 0%,
+                    #172554 48%,
+                    #312e81 100%
+                );
+
+            box-shadow:
+                8px 0 30px rgba(0, 0, 0, 0.12);
+
+            padding: 32px 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ====================================================== */
+
+        .navbar-brand {
+
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        .img-profile {
+
+            width: 145px;
+            height: 145px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid rgba(255,255,255,0.25);
+
+            box-shadow:
+                0 0 0 8px rgba(255,255,255,0.05),
+                0 15px 40px rgba(0,0,0,0.25);
+
+            transition: 0.4s ease;
+        }
+
+        .img-profile:hover {
+
+            transform: scale(1.05);
+
+            border-color: var(--accent);
+        }
+
+
+        /* =====================================================
+           SIDEBAR NAVIGATION
+        ====================================================== */
+
+        #navbarSupportedContent {
+
+            width: 100%;
+        }
+
+        #sideNav .navbar-nav {
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: stretch;
+
+            gap: 8px;
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+        #sideNav .navbar-nav .nav-item {
+
+            width: 100%;
+
+            margin: 0;
+        }
+
+        #sideNav .navbar-nav .nav-link {
+
+            width: 100%;
+
+            min-height: 46px;
+
+            display: flex;
+
+            align-items: center;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            padding: 12px 17px;
+
+            border-radius: 10px;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        #sideNav .navbar-nav .nav-link:hover,
+        #sideNav .navbar-nav .nav-link.active {
+
+            color: #ffffff;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            transform:
+                translateX(5px);
+
+            box-shadow:
+                inset 3px 0 0 var(--accent);
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ====================================================== */
+
+        .container-fluid {
+
+            margin-left: var(--sidebar-width);
+
+            width:
+                calc(100% - var(--sidebar-width));
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        .resume-section {
+
+            min-height: 100vh;
+
+            padding:
+                90px 8% !important;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .section-title {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size:
+                clamp(2rem, 4vw, 3rem);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            color: var(--dark);
+
+            margin-bottom: 8px;
+        }
+
+        .section-title span {
+
+            color: var(--primary);
+        }
+
+        .heading-border {
+
+            width: 70px;
+
+            height: 4px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        #about {
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(13,110,253,0.08),
+                    transparent 30%
+                ),
+                #ffffff;
+        }
+
+        .small-brand {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .small-brand::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 3px;
+
+            background:
+                var(--primary);
+
+            border-radius: 20px;
+        }
+
+        .main-name {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size:
+                clamp(2.8rem, 6vw, 5rem);
+
+            line-height: 0.95;
+
+            font-weight: 800;
+
+            color: var(--dark);
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .main-name span {
+
+            color: var(--primary);
+        }
+
+        .profession {
+
+            font-size:
+                clamp(1rem, 2vw, 1.2rem);
+
+            color: var(--muted);
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .profession strong {
+
+            color: var(--dark);
+        }
+
+        .about-text {
+
+            max-width: 800px;
+
+            font-size: 16px;
+
+            color: #4b5563;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ====================================================== */
+
+        .modern-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            border: none;
+
+            padding:
+                12px 20px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-primary-modern {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        .btn-primary-modern:hover {
+
+            color: white;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(13,110,253,0.25);
+        }
+
+        .btn-outline-modern {
+
+            color: var(--dark);
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+        }
+
+        .btn-outline-modern:hover {
+
+            color: var(--primary);
+
+            border-color:
+                var(--primary);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================================
+           SOCIAL ICONS
+        ====================================================== */
+
+        .social-icons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .social-icons a {
+
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--dark);
+
+            color: white;
+
+            transition: 0.3s ease;
+        }
+
+        .social-icons a:hover {
+
+            background: var(--primary);
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(13,110,253,0.25);
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ====================================================== */
+
+        #experience {
+
+            background:
+                #f8fafc;
+        }
+
+        .experience-card {
+
+            height: 100%;
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15,23,42,0.04);
+        }
+
+        .experience-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 4px;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        .experience-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 20px 45px
+                rgba(15,23,42,0.10);
+        }
+
+        .experience-icon {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(13,110,253,0.08);
+
+            color:
+                var(--primary);
+
+            margin-bottom: 17px;
+
+            font-size: 20px;
+        }
+
+        .experience-card h4 {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+            color: var(--dark);
+
+            margin-bottom: 5px;
+        }
+
+        .company {
+
+            color:
+                var(--primary);
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+        .experience-date {
+
+            display: inline-block;
+
+            margin-top: 12px;
+
+            color:
+                var(--secondary);
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           PORTFOLIO
+        ====================================================== */
+
+        #portfolio {
+
+            background: white;
+        }
+
+        .filter-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+
+            border:
+                1px solid var(--border);
+
+            background: white;
+
+            color: var(--text);
+
+            padding:
+                9px 17px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+
+            background:
+                var(--primary);
+
+            border-color:
+                var(--primary);
+
+            color: white;
+        }
+
+        .portfolio-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            margin-bottom: 25px;
+
+            cursor: pointer;
+
+            transition: 0.35s ease;
+        }
+
+        .portfolio-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(15,23,42,0.12);
+        }
+
+        .portfolio-image {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .portfolio-card:hover
+        .portfolio-image {
+
+            transform:
+                scale(1.05);
+        }
+
+        .portfolio-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(13,110,253,0.90),
+                    rgba(102,16,242,0.88)
+                );
+
+            opacity: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.3s ease;
+        }
+
+        .portfolio-card:hover
+        .portfolio-overlay {
+
+            opacity: 1;
+        }
+
+        .portfolio-overlay i {
+
+            color: white;
+
+            font-size: 35px;
+        }
+
+        .portfolio-info {
+
+            padding: 18px;
+        }
+
+        .portfolio-info h5 {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size: 23px;
+
+            color: var(--dark);
+
+            margin-bottom: 4px;
+        }
+
+        .portfolio-info p {
+
+            margin: 0;
+
+            font-size: 13px;
+
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ====================================================== */
+
+        #skills {
+
+            padding:
+                90px 8%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #172554,
+                    #312e81
+                );
+
+            color: white;
+        }
+
+        #skills .section-title {
+
+            color: white;
+        }
+
+        #skills .heading-border {
+
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+        .skill-card {
+
+            height: 100%;
+
+            padding:
+                25px 18px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter:
+                blur(10px);
+
+            transition: 0.35s ease;
+        }
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            background:
+                rgba(255,255,255,0.11);
+        }
+
+        .skill-icon {
+
+            font-size: 35px;
+
+            color: var(--accent);
+
+            margin-bottom: 15px;
+        }
+
+        .skill-card h5 {
+
+            margin: 0;
+
+            font-size: 15px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           HIGHLIGHTS
+        ====================================================== */
+
+        #awards {
+
+            background:
+                #f8fafc;
+        }
+
+        .achievement-card {
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            transition: 0.3s ease;
+        }
+
+        .achievement-card:hover {
+
+            transform:
+                translateX(5px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(15,23,42,0.08);
+        }
+
+        .achievement-card h5 {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size: 24px;
+
+            color: var(--dark);
+
+            margin-bottom: 5px;
+        }
+
+        .achievement-date {
+
+            color:
+                var(--primary);
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        #contact {
+
+            background: white;
+        }
+
+        .contact-card {
+
+            height: 100%;
+
+            background:
+                #f8fafc;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(13,110,253,0.3);
+
+            box-shadow:
+                0 15px 35px
+                rgba(15,23,42,0.07);
+        }
+
+        .contact-icon {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(13,110,253,0.08);
+
+            color:
+                var(--primary);
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card h5 {
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color:
+                var(--dark);
+        }
+
+        .contact-card a {
+
+            color:
+                var(--primary);
+
+            word-break: break-word;
+
+            font-size: 14px;
+        }
+
+        .contact-card p {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            color:
+                var(--muted);
+        }
+
+
+        /* =====================================================
+           MAP
+        ====================================================== */
+
+        #maps {
+
+            background:
+                #f8fafc;
+
+            padding:
+                70px 8%;
+        }
+
+        .map-container {
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px
+                rgba(15,23,42,0.10);
+        }
+
+        .map-container iframe {
+
+            width: 100%;
+
+            height: 400px;
+
+            border: 0;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            margin-left:
+                var(--sidebar-width);
+
+            padding:
+                25px;
+
+            text-align: center;
+
+            background:
+                #111827;
+
+            color:
+                rgba(255,255,255,0.65);
+
+            font-size: 13px;
+        }
+
+        footer strong {
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           MODAL
+        ====================================================== */
+
+        .modal-content {
+
+            border: none;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.25);
+        }
+
+        .modal-header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            border: none;
+        }
+
+        .modal-header .btn-close {
+
+            filter:
+                brightness(0)
+                invert(1);
+        }
+
+        .modal-title {
+
+            font-family:
+                "Saira Extra Condensed",
+                sans-serif;
+
+            font-size: 28px;
+
+            font-weight: 700;
+        }
+
+        .modal-project-image {
+
+            width: 100%;
+
+            max-height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 14px;
+        }
+
+
+        /* =====================================================
+           SCROLL ANIMATION
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           MOBILE BRAND
+        ====================================================== */
+
+        .mobile-brand {
+
+            display: none;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 991px) {
+
+            :root {
+
+                --sidebar-width: 0px;
+            }
+
+
+            /* Mobile top navigation */
+
+            #sideNav {
+
+                width: 100%;
+
+                min-height: auto;
+
+                height: auto;
+
+                position: fixed;
+
+                padding:
+                    9px 15px;
+
+                background:
+                    linear-gradient(
+                        135deg,
+                        #111827,
+                        #312e81
+                    );
+
+                flex-direction: row;
+
+                align-items: center;
+            }
+
+
+            .mobile-brand {
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 10px;
+
+                color: white;
+
+                font-family:
+                    "Saira Extra Condensed",
+                    sans-serif;
+
+                font-size: 23px;
+
+                font-weight: 700;
+            }
+
+            .mobile-brand img {
+
+                width: 42px;
+                height: 42px;
+
+                border-radius: 50%;
+
+                object-fit: cover;
+
+                border:
+                    2px solid
+                    rgba(255,255,255,0.5);
+            }
+
+
+            .navbar-brand {
+
+                display: none;
+            }
+
+
+            .navbar-toggler {
+
+                border:
+                    1px solid
+                    rgba(255,255,255,0.3);
+
+                padding:
+                    8px 10px;
+
+                margin-left: auto;
+            }
+
+
+            /* Mobile dropdown */
+
+            .navbar-collapse {
+
+                background:
+                    linear-gradient(
+                        135deg,
+                        #111827,
+                        #312e81
+                    );
+
+                margin-top: 10px;
+
+                padding: 10px;
+
+                border-radius: 12px;
+            }
+
+
+            #sideNav .navbar-nav {
+
+                gap: 4px;
+            }
+
+
+            #sideNav .navbar-nav .nav-link {
+
+                min-height: 43px;
+
+                padding:
+                    10px 14px;
+            }
+
+
+            .container-fluid {
+
+                margin-left: 0;
+
+                width: 100%;
+
+                padding-top: 65px;
+            }
+
+
+            footer {
+
+                margin-left: 0;
+            }
+
+
+            .resume-section {
+
+                min-height: auto;
+
+                padding:
+                    80px 6% !important;
+            }
+
+
+            #skills {
+
+                padding:
+                    80px 6%;
+            }
+
+
+            #maps {
+
+                padding:
+                    70px 6%;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL PHONES
+        ====================================================== */
+
+        @media (max-width: 575px) {
+
+            body {
+
+                font-size: 14px;
+            }
+
+
+            .container-fluid {
+
+                padding-top: 62px;
+            }
+
+
+            .resume-section {
+
+                padding:
+                    65px 18px
+                    !important;
+            }
+
+
+            #skills {
+
+                padding:
+                    65px 18px;
+            }
+
+
+            #maps {
+
+                padding:
+                    55px 18px;
+            }
+
+
+            .main-name {
+
+                font-size:
+                    2.8rem;
+
+                line-height: 1;
+            }
+
+
+            .profession {
+
+                font-size: 15px;
+            }
+
+
+            .about-text {
+
+                font-size: 14px;
+            }
+
+
+            .section-title {
+
+                font-size:
+                    2rem;
+            }
+
+
+            .heading-border {
+
+                margin-bottom:
+                    30px;
+            }
+
+
+            .experience-card {
+
+                padding:
+                    22px;
+            }
+
+
+            .experience-card h4 {
+
+                font-size:
+                    22px;
+            }
+
+
+            .portfolio-image {
+
+                height:
+                    200px;
+            }
+
+
+            .filter-buttons {
+
+                justify-content:
+                    flex-start;
+            }
+
+
+            .filter-btn {
+
+                font-size:
+                    12px;
+
+                padding:
+                    8px 13px;
+            }
+
+
+            .skill-card {
+
+                padding:
+                    22px 12px;
+            }
+
+
+            .skill-icon {
+
+                font-size:
+                    28px;
+            }
+
+
+            .map-container iframe {
+
+                height:
+                    320px;
+            }
+
+
+            footer {
+
+                font-size:
+                    12px;
+
+                padding:
+                    20px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="page-top">
+
+
+<!-- =========================================================
+                        SIDEBAR
+========================================================== -->
+
+<nav
+    class="navbar navbar-expand-lg navbar-dark"
+    id="sideNav">
+
+
+    <!-- MOBILE BRAND -->
+
+    <a
+        class="mobile-brand"
+        href="#page-top">
+
+        <img
+            src="img/profile-banner.png"
+            alt="Michael Mwangi Waweru">
+
+        Michael Mwangi
+
+    </a>
+
+
+    <!-- DESKTOP PROFILE -->
+
+    <a
+        class="navbar-brand"
+        href="#page-top">
+
+        <span class="d-none d-lg-block">
+
+            <img
+                class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                src="img/profile-banner.png"
+                alt="Michael Mwangi Waweru">
+
+        </span>
+
+    </a>
+
+
+    <!-- MOBILE BUTTON -->
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+
+    <!-- =====================================================
+                         SIDEBAR LINKS
+    ====================================================== -->
+
+    <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent">
+
+
+        <ul class="navbar-nav">
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link active"
+                    href="#about">
+
+                    <i class="fa-solid fa-house me-2"></i>
+
+                    About
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#experience">
+
+                    <i class="fa-solid fa-briefcase me-2"></i>
+
+                    Experience
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#portfolio">
+
+                    <i class="fa-solid fa-folder-open me-2"></i>
+
+                    Portfolio
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#skills">
+
+                    <i class="fa-solid fa-code me-2"></i>
+
+                    Skills
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#awards">
+
+                    <i class="fa-solid fa-graduation-cap me-2"></i>
+
+                    Highlights
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#contact">
+
+                    <i class="fa-solid fa-address-book me-2"></i>
+
+                    Contact
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a
+                    class="nav-link"
+                    href="#maps">
+
+                    <i class="fa-solid fa-location-dot me-2"></i>
+
+                    Location
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+                     MAIN CONTENT
+========================================================== -->
+
+<div class="container-fluid p-0">
+
+
+<!-- =========================================================
+                         ABOUT
+========================================================== -->
+
+<section
+    class="resume-section"
+    id="about">
+
+    <div
+        class="my-auto reveal">
+
+
+        <div class="small-brand">
+
+            MICHAEL MWANGI WAWERU
+
+        </div>
+
+
+        <h1 class="main-name">
+
+            Michael Mwangi
+
+            <span>Waweru</span>
+
+        </h1>
+
+
+        <div class="profession">
+
+            <strong>Java Developer</strong>
+            ·
+            <strong>PHP Developer</strong>
+            ·
+            <strong>Python Data Analyst</strong>
+            ·
+            Full-Stack Developer
+
+        </div>
+
+
+        <p class="about-text">
+
+            I am a Computer Science graduate from Maseno University
+            with a strong interest in software development, web
+            application development, data analysis and IT solutions.
+
+            I build practical applications using Java, Spring Boot,
+            PHP, React, Python, MySQL and modern web technologies.
+
+            I enjoy transforming real-world business requirements
+            into useful, reliable and user-friendly digital solutions.
+
+        </p>
+
+
+        <div
+            class="d-flex flex-wrap gap-2 mb-4">
+
+
+            <a
+                href="Michael_Mwangi_Waweru_CV.pdf"
+                download
+                class="modern-btn btn-primary-modern">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download CV
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="modern-btn btn-outline-modern">
+
+                <i class="fa-solid fa-address-card"></i>
+
+                Contact Me
+
+            </a>
+
+
+        </div>
+
+
+        <!-- SOCIAL LINKS -->
+
+        <ul class="social-icons">
+
+
+            <li>
+
+                <a
+                    href="https://github.com/michaelmwangiwaweru/"
+                    target="_blank"
+                    title="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="https://www.linkedin.com/in/michael-mwangi-waweru-53212a216/"
+                    target="_blank"
+                    title="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="https://wa.me/254759838070"
+                    target="_blank"
+                    title="WhatsApp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="mailto:mwangimichael220@gmail.com"
+                    title="Email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="tel:0759838070"
+                    title="Phone">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                      EXPERIENCE
+========================================================== -->
+
+<section
+    class="resume-section"
+    id="experience">
+
+
+    <div class="row">
+
+
+        <div class="col-12 reveal">
+
+            <h2 class="section-title">
+
+                Work <span>Experience</span>
+
+            </h2>
+
+            <div class="heading-border"></div>
+
+        </div>
+
+
+        <!-- WHITEWISE -->
+
+        <div
+            class="col-lg-6 mb-4 reveal">
+
+            <div class="experience-card">
+
+
+                <div class="experience-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+
+                <h4>
+                    IT Support & Data Entry
+                </h4>
+
+
+                <div class="company">
+
+                    Whitewise Interior Company
+
+                </div>
+
+
+                <p class="mt-3 mb-0">
+
+                    Supporting daily IT operations, data entry,
+                    digital systems and business technology.
+                    Contributing to web and software-related
+                    solutions while supporting efficient business
+                    processes.
+
+                </p>
+
+
+                <span class="experience-date">
+
+                    2025 - Present
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- CHANDERA -->
+
+        <div
+            class="col-lg-6 mb-4 reveal">
+
+            <div class="experience-card">
+
+
+                <div class="experience-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+
+                <h4>
+
+                    Computer Packages Instructor
+
+                </h4>
+
+
+                <div class="company">
+
+                    Chandera Polytechnic
+
+                </div>
+
+
+                <p class="mt-3 mb-0">
+
+                    Delivered practical computer training and
+                    supported learners in developing essential
+                    computer application and digital skills.
+
+                </p>
+
+
+                <span class="experience-date">
+
+                    June 2025 - August 2025
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- NSSF -->
+
+        <div
+            class="col-lg-6 mb-4 reveal">
+
+            <div class="experience-card">
+
+
+                <div class="experience-icon">
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                </div>
+
+
+                <h4>
+
+                    ICT Attachment
+
+                </h4>
+
+
+                <div class="company">
+
+                    NSSF Molo
+
+                </div>
+
+
+                <p class="mt-3 mb-0">
+
+                    Gained practical experience in ICT support,
+                    computer systems, troubleshooting and
+                    technology-assisted office operations.
+
+                </p>
+
+
+                <span class="experience-date">
+
+                    May 2024 - September 2024
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- SOFTWARE PROJECTS -->
+
+        <div
+            class="col-lg-6 mb-4 reveal">
+
+            <div class="experience-card">
+
+
+                <div class="experience-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+
+                <h4>
+
+                    Software Development Projects
+
+                </h4>
+
+
+                <div class="company">
+
+                    Java · React · PHP · Python · MySQL
+
+                </div>
+
+
+                <p class="mt-3 mb-0">
+
+                    Developing practical systems including
+                    inventory, ordering, e-commerce, REST APIs
+                    and data-analysis projects.
+
+                </p>
+
+
+                <span class="experience-date">
+
+                    2024 - Present
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                       PORTFOLIO
+========================================================== -->
+
+<section
+    class="resume-section"
+    id="portfolio">
+
+
+    <div class="row">
+
+
+        <div
+            class="col-12 text-center reveal">
+
+            <h2 class="section-title">
+
+                My <span>Portfolio</span>
+
+            </h2>
+
+
+            <div
+                class="heading-border mx-auto">
+            </div>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="col-12">
+
+            <div class="filter-buttons">
+
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+
+                    All
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="web">
+
+                    Web Development
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="java">
+
+                    Java
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="data">
+
+                    Data Analysis
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="row">
+
+
+        <!-- PROJECT 1 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item web java reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project1">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-1.jpg"
+                        class="portfolio-image"
+                        alt="Whitewise Interior Furniture">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass-plus">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        Whitewise Interior Furniture
+                    </h5>
+
+                    <p>
+                        Full-Stack E-Commerce System
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item web java reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project2">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-2.jpg"
+                        class="portfolio-image"
+                        alt="Fiesta Trend Stocking System">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass-plus">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        Fiesta Trend Stocking System
+                    </h5>
+
+                    <p>
+                        Inventory & Ordering Platform
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item java web reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project3">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-3.jpg"
+                        class="portfolio-image"
+                        alt="Simple Survey API">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass-plus">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        Simple Survey API
+                    </h5>
+
+                    <p>
+                        Java Spring Boot REST API
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item data reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project4">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-4.jpg"
+                        class="portfolio-image"
+                        alt="Python Data Analysis">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-solid fa-chart-line">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        Python Data Analysis
+                    </h5>
+
+                    <p>
+                        Data Analysis & Visualization
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 5 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item web reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project5">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-5.jpg"
+                        class="portfolio-image"
+                        alt="PHP Web Development">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-brands fa-php">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        PHP Web Development
+                    </h5>
+
+                    <p>
+                        Responsive Business Websites
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 6 -->
+
+        <div
+            class="col-md-6 col-lg-4 portfolio-item data web reveal">
+
+            <div
+                class="portfolio-card"
+                data-bs-toggle="modal"
+                data-bs-target="#project6">
+
+
+                <div class="position-relative">
+
+
+                    <img
+                        src="img/portfolio/p-6.jpg"
+                        class="portfolio-image"
+                        alt="Business Technology Solutions">
+
+
+                    <div class="portfolio-overlay">
+
+                        <i
+                            class="fa-solid fa-chart-pie">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="portfolio-info">
+
+                    <h5>
+                        Business Technology Solutions
+                    </h5>
+
+                    <p>
+                        Digital & Data Solutions
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                         SKILLS
+========================================================== -->
+
+<section id="skills">
+
+
+    <div class="text-center reveal">
+
+
+        <h2 class="section-title">
+
+            Technical <span>Skills</span>
+
+        </h2>
+
+
+        <div class="heading-border"></div>
+
+
+    </div>
+
+
+    <div class="row g-3">
+
+
+        <!-- JAVA -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-java"></i>
+
+                </div>
+
+                <h5>Java</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPRING -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <h5>Spring Boot</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHP -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-php"></i>
+
+                </div>
+
+                <h5>PHP</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- PYTHON -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-python"></i>
+
+                </div>
+
+                <h5>Python</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- REACT -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-react"></i>
+
+                </div>
+
+                <h5>React</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-js"></i>
+
+                </div>
+
+                <h5>JavaScript</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- MYSQL -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+                <h5>MySQL</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- HTML -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-html5"></i>
+
+                </div>
+
+                <h5>HTML5</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- CSS -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-css3-alt"></i>
+
+                </div>
+
+                <h5>CSS3</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- GIT -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-brands fa-git-alt"></i>
+
+                </div>
+
+                <h5>Git & GitHub</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATA ANALYSIS -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                </div>
+
+                <h5>Data Analysis</h5>
+
+            </div>
+
+        </div>
+
+
+        <!-- VISUALIZATION -->
+
+        <div
+            class="col-6 col-md-4 col-lg-3 reveal">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <h5>Data Visualization</h5>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                  EDUCATION / HIGHLIGHTS
+========================================================== -->
+
+<section
+    class="resume-section"
+    id="awards">
+
+
+    <div class="row">
+
+
+        <div class="col-12 reveal">
+
+
+            <h2 class="section-title">
+
+                Education & <span>Highlights</span>
+
+            </h2>
+
+
+            <div class="heading-border"></div>
+
+
+        </div>
+
+
+        <!-- MASENO -->
+
+        <div class="col-lg-6 reveal">
+
+            <div class="achievement-card">
+
+
+                <span class="achievement-date">
+
+                    2021 - 2025
+
+                </span>
+
+
+                <h5>
+
+                    Bachelor of Science in Computer Science
+
+                </h5>
+
+
+                <strong>
+
+                    Maseno University
+
+                </strong>
+
+
+                <p class="mt-2 mb-0">
+
+                    Computer Science graduate with academic and
+                    practical exposure to software development,
+                    databases, programming, web technologies and
+                    data analysis.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- NJENGA KARUME -->
+
+        <div class="col-lg-6 reveal">
+
+            <div class="achievement-card">
+
+
+                <span class="achievement-date">
+
+                    Secondary Education
+
+                </span>
+
+
+                <h5>
+
+                    Njenga Karume Secondary School
+
+                </h5>
+
+
+                <strong>
+
+                    KCSE
+
+                </strong>
+
+
+                <p class="mt-2 mb-0">
+
+                    Completed secondary education and developed
+                    a strong foundation for further studies in
+                    Computer Science and technology.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <div class="col-lg-6 reveal">
+
+            <div class="achievement-card">
+
+
+                <span class="achievement-date">
+
+                    2024 - Present
+
+                </span>
+
+
+                <h5>
+
+                    Full-Stack Software Projects
+
+                </h5>
+
+
+                <strong>
+
+                    Java · React · PHP · Python · MySQL
+
+                </strong>
+
+
+                <p class="mt-2 mb-0">
+
+                    Developed practical systems including
+                    inventory, ordering, furniture e-commerce,
+                    survey APIs and data-analysis projects.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="col-lg-6 reveal">
+
+            <div class="achievement-card">
+
+
+                <span class="achievement-date">
+
+                    2025 - Present
+
+                </span>
+
+
+                <h5>
+
+                    IT Support & Digital Solutions
+
+                </h5>
+
+
+                <strong>
+
+                    Business Technology
+
+                </strong>
+
+
+                <p class="mt-2 mb-0">
+
+                    Practical experience supporting technology,
+                    data management and digital workflows in a
+                    business environment.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                          CONTACT
+========================================================== -->
+
+<section
+    class="resume-section"
+    id="contact">
+
+
+    <div class="row">
+
+
+        <div
+            class="col-12 text-center reveal">
+
+
+            <h2 class="section-title">
+
+                Get In <span>Touch</span>
+
+            </h2>
+
+
+            <div
+                class="heading-border mx-auto">
+            </div>
+
+
+            <p class="mb-5">
+
+                Interested in software development, data analysis,
+                web development or IT solutions?
+
+                Feel free to contact me directly.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+
+                <h5>Phone</h5>
+
+
+                <a href="tel:0759838070">
+
+                    0759838070
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </div>
+
+
+                <h5>WhatsApp</h5>
+
+
+                <a
+                    href="https://wa.me/254759838070"
+                    target="_blank">
+
+                    +254 759 838 070
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+
+                <h5>Email</h5>
+
+
+                <a
+                    href="mailto:mwangimichael220@gmail.com">
+
+                    mwangimichael220@gmail.com
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- GITHUB -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </div>
+
+
+                <h5>GitHub</h5>
+
+
+                <a
+                    href="https://github.com/michaelmwangiwaweru/simple-survey-api"
+                    target="_blank">
+
+                    GitHub Profile
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </div>
+
+
+                <h5>LinkedIn</h5>
+
+
+                <a
+                    href="https://www.linkedin.com/in/michael-mwangi-waweru-53212a216/"
+                    target="_blank">
+
+                    Michael Mwangi Waweru
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div
+            class="col-md-6 col-lg-4 mb-4 reveal">
+
+            <div class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+
+                <h5>Location</h5>
+
+
+                <p>
+
+                    Nakuru, Kenya
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                            MAP
+========================================================== -->
+
+<section id="maps">
+
+
+    <div
+        class="text-center mb-4 reveal">
+
+
+        <h2 class="section-title">
+
+            Nakuru <span>Whitehouse</span>
+
+        </h2>
+
+
+        <div
+            class="heading-border mx-auto">
+        </div>
+
+
+        <p>
+
+            View the Nakuru Whitehouse location on Google Maps.
+
+        </p>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Whitehouse%2C%20Nakuru%2C%20Kenya"
+            target="_blank"
+            class="modern-btn btn-primary-modern">
+
+            <i class="fa-solid fa-map-location-dot"></i>
+
+            Open Nakuru Whitehouse Map
+
+        </a>
+
+
+    </div>
+
+
+    <div class="map-container reveal">
+
+
+        <iframe
+            src="https://www.google.com/maps?q=Whitehouse%2C%20Nakuru%2C%20Kenya&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+
+
+<!-- =========================================================
+                           FOOTER
+========================================================== -->
+
+<footer>
+
+    © 2026
+
+    <strong>
+        Michael Mwangi Waweru
+    </strong>
+
+    · Java Developer
+    · PHP Developer
+    · Python Data Analyst
+
+</footer>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 1
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project1"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Whitewise Interior Furniture
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-1.jpg"
+                            class="modal-project-image"
+                            alt="Whitewise Interior Furniture">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            A full-stack furniture management and
+                            e-commerce system supporting product
+                            catalogues, customer browsing, shopping
+                            carts, ordering and business management.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            Java · Spring Boot · React · MySQL
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 2
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project2"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Fiesta Trend Stocking System
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-2.jpg"
+                            class="modal-project-image"
+                            alt="Fiesta Trend Stocking System">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            A general retail inventory and ordering
+                            platform for managing products, stock,
+                            product categories and customer orders.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            Java · Spring Boot · React · MySQL
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 3
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project3"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Simple Survey API
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-3.jpg"
+                            class="modal-project-image"
+                            alt="Simple Survey API">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            A REST API for survey management,
+                            authentication, user roles and
+                            backend data operations.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            Java · Spring Boot · REST API · MySQL
+
+                        </p>
+
+
+                        <a
+                            href="https://github.com/michaelmwangiwaweru/simple-survey-api"
+                            target="_blank"
+                            class="modern-btn btn-primary-modern">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            View GitHub
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 4
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project4"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Python Data Analysis
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-4.jpg"
+                            class="modal-project-image"
+                            alt="Python Data Analysis">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            Data analysis and visualization projects
+                            using Python to clean, explore and
+                            communicate insights from datasets.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            Python · Pandas · NumPy · Matplotlib
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 5
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project5"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    PHP Web Development
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-5.jpg"
+                            class="modal-project-image"
+                            alt="PHP Web Development">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            Responsive business websites and
+                            web applications developed using
+                            PHP, HTML, CSS, JavaScript and MySQL.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            PHP · HTML5 · CSS3 · JavaScript · MySQL
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       PROJECT MODAL 6
+========================================================== -->
+
+<div
+    class="modal fade"
+    id="project6"
+    tabindex="-1"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-dialog modal-lg modal-dialog-centered">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+
+                <h5 class="modal-title">
+
+                    Business Technology Solutions
+
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="row g-4 align-items-center">
+
+
+                    <div class="col-md-6">
+
+
+                        <img
+                            src="img/portfolio/p-6.jpg"
+                            class="modal-project-image"
+                            alt="Business Technology Solutions">
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+                        <p>
+
+                            Practical technology solutions combining
+                            software development, data management,
+                            visualization and IT support for
+                            business workflows.
+
+                        </p>
+
+
+                        <strong>
+                            Technologies:
+                        </strong>
+
+
+                        <p>
+
+                            Python · Java · PHP · MySQL · React
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                       BOOTSTRAP JS
+========================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<script>
+
+    /* =====================================================
+       PORTFOLIO FILTER
+    ====================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const portfolioItems =
+        document.querySelectorAll(".portfolio-item");
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const filter =
+                this.getAttribute("data-filter");
+
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            this.classList.add("active");
+
+
+            portfolioItems.forEach(item => {
+
+                const categories =
+                    item.classList;
+
+
+                if (filter === "all") {
+
+                    item.style.display =
+                        "";
+
+                } else if (
+                    categories.contains(filter)
+                ) {
+
+                    item.style.display =
+                        "";
+
+                } else {
+
+                    item.style.display =
+                        "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList
+                            .add("show");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+    /* =====================================================
+       ACTIVE SIDEBAR LINK
+    ====================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            let current = "";
+
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                const sectionHeight =
+                    section.offsetHeight;
+
+
+                if (
+                    window.scrollY >= sectionTop &&
+                    window.scrollY <
+                    sectionTop + sectionHeight
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            });
+
+
+            navLinks.forEach(link => {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+        }
+    );
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER CLICK
+    ====================================================== */
+
+    navLinks.forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                const navbar =
+                    document.getElementById(
+                        "navbarSupportedContent"
+                    );
+
+
+                if (
+                    navbar.classList.contains(
+                        "show"
+                    )
+                ) {
+
+                    const collapse =
+                        bootstrap.Collapse
+                            .getInstance(navbar);
+
+
+                    if (collapse) {
+
+                        collapse.hide();
+
+                    }
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
